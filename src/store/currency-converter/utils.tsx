@@ -8,7 +8,7 @@
 export function convertValueWithBaseRateToTargetRate(
   value: string, baseRate: number, targetRate: number,
 ) {
-  const numberValue = parseFloat(value);
-  const result = (numberValue / baseRate) * targetRate;
-  return result.toFixed(2);
+  const numberValue = parseFloat(value)
+  const result = (numberValue / baseRate) * targetRate
+  return result.toFixed(2)
 }

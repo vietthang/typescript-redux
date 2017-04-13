@@ -34,5 +34,5 @@ export const latestJson = `{
         "USD": 1.065,
         "ZAR": 13.936
     }
-}`;
-export const latestResponse: IFixerServiceResponse = JSON.parse(latestJson);
+}`
+export const latestResponse: IFixerServiceResponse = JSON.parse(latestJson)

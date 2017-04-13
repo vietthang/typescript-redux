@@ -1,5 +1,5 @@
-import * as React from 'react';
-import classNames from 'classnames';
+import * as React from 'react'
+import * as classNames from 'classnames'
 
 // const inlineStyles = {};
 
@@ -10,19 +10,19 @@ export function PageHero({className = '', children = undefined,
     className.toString(),
     'u-centered',
     'u-letter-box--super',
-  );
+  )
 
   return (
     <section className={mainClass}>
-      <h1 className="c-heading u-window-box--none">
+      <h1 className='c-heading u-window-box--none'>
         {title}
       </h1>
-      <h3 className="c-heading u-window-box--none">
+      <h3 className='c-heading u-window-box--none'>
         {subtitle}
       </h3>
       <div>
         {children}
       </div>
     </section>
-  );
+  )
 }

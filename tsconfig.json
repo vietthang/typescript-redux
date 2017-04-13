@@ -6,7 +6,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": false,
+    "noUnusedParameters": true,
     "preserveConstEnums": true,
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
@@ -21,10 +21,10 @@
     "pretty": true,
     "declaration": false,
     "isolatedModules": false,
-    "module": "commonjs",
+    "module": "ES6",
     "moduleResolution": "node",
     "noResolve": false,
-    "outDir": "../out",
+    "outDir": "./out",
     "newLine": "LF",
     "removeComments": true,
     "sourceMap": true,
@@ -40,28 +40,7 @@
     "**/*"
   ],
   "exclude": [
-    "node_modules/**/",
-    "jspm_packages/**/"
+    "node_modules/**/"
   ],
-  "compileOnSave": false,
-  "vscode": {
-    "rewriteTsconfig": true
-  },
-  "atom": {
-    "rewriteTsconfig": true
-  },
-  "formatCodeOptions": {
-    "indentSize": 2,
-    "tabSize": 2,
-    "newLineCharacter": "\r\n",
-    "convertTabsToSpaces": true,
-    "insertSpaceAfterCommaDelimiter": true,
-    "insertSpaceAfterSemicolonInForStatements": true,
-    "insertSpaceBeforeAndAfterBinaryOperators": true,
-    "insertSpaceAfterKeywordsInControlFlowStatements": true,
-    "insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-    "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
-    "placeOpenBraceOnNewLineForFunctions": false,
-    "placeOpenBraceOnNewLineForControlBlocks": false
-  }
+  "compileOnSave": false
 }

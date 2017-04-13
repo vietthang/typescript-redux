@@ -1,18 +1,18 @@
-import { combineEpics } from 'redux-observable';
-import 'rxjs/add/operator/map';
+import { combineEpics } from 'redux-observable'
+import 'rxjs/add/operator/map'
 
-import { Store } from '../index';
-import { ActionCreators, Action } from './reducer';
-import { convertValueWithBaseRateToTargetRate } from './utils';
-import * as CurrencyConverterSelectors from './selectors';
-import * as CurrencyRatesSelectors from '../currency-rates/selectors';
+import { Store } from '../index'
+import { ActionCreators, Action } from './reducer'
+import { convertValueWithBaseRateToTargetRate } from './utils'
+import * as CurrencyConverterSelectors from './selectors'
+import * as CurrencyRatesSelectors from '../currency-rates/selectors'
 
 // Epics - handling side effects of actions
 const changeCurrencyEpic = (action$: any, store: Store) =>
   action$.ofType(
     ActionCreators.ChangeBaseCurrency.type,
     ActionCreators.ChangeTargetCurrency.type,
-  ).map((action: typeof ActionCreators.ChangeBaseCurrency) => ({
+  ).map(() => ({
     type: ActionCreators.UpdateCurrencyConverterState.type,
     payload: {
       targetValue: convertValueWithBaseRateToTargetRate(
@@ -21,7 +21,7 @@ const changeCurrencyEpic = (action$: any, store: Store) =>
         CurrencyRatesSelectors.getTargetCurrencyRate(store.getState()),
       ),
     },
-  } as Action));
+  } as Action))
 
 const changeBaseValueEpic = (action$: any, store: Store) =>
   action$.ofType(ActionCreators.ChangeBaseValue.type)
@@ -34,7 +34,7 @@ const changeBaseValueEpic = (action$: any, store: Store) =>
           CurrencyRatesSelectors.getTargetCurrencyRate(store.getState()),
         ),
       },
-    } as Action));
+    } as Action))
 
 const changeTargetValueEpic = (action$: any, store: Store) =>
   action$.ofType(ActionCreators.ChangeTargetValue.type)
@@ -47,8 +47,8 @@ const changeTargetValueEpic = (action$: any, store: Store) =>
           CurrencyRatesSelectors.getBaseCurrencyRate(store.getState()),
         ),
       },
-    } as Action));
+    } as Action))
 
 export const epics = combineEpics(
   changeCurrencyEpic, changeBaseValueEpic, changeTargetValueEpic,
-);
+)
